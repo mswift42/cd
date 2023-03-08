@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:coffeediary/brewtime.dart';
 import 'package:coffeediary/coffee.dart';
 import 'package:coffeediary/grind.dart';
@@ -14,4 +15,11 @@ class Brew {
       required this.coffee,
       required this.brewTime,
       required this.grind});
+
+  Brew.fromJson(Map<String, dynamic> json)
+    : method = json['method'],
+      coffee = json['coffee'],
+      brewTime = json['brewtime'],
+      grind = json['grind'];
+
 }
